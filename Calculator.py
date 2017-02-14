@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import math
+from DelgakaChecks import DelgakaChecks
 
 __author__ = "delgaka"
 
@@ -12,30 +13,8 @@ Square
 Cube
 square root
 
-https://github.com/delgaka
+https://github.com/delgaka/Udemy_Computional_Think
 """
-
-
-# convert input to a number
-def input_to_number(user_input):
-    if is_number(user_input):
-        # if the float number less your int conversion is greater than 0.0 is a float number
-        if (float(user_input) - int(float(user_input))) > 0.0:
-            return float(user_input)
-        else:
-            # in python3 we need to convert a explicit float to an int number
-            return int(float(user_input))
-    return False
-
-
-# Check if the variable is a number (float or integer)
-def is_number(user_number):
-    try:
-        # I only need to test a float conversion
-        float(user_number)
-        return True
-    except ValueError:
-        return False
 
 
 def square_number(foo):
@@ -52,8 +31,8 @@ def square_root_number(foo):
 
 def main():
     num = input("Please, type a number: ")
-    number = input_to_number(num)
-    if is_number(num) and number:
+    number = DelgakaChecks.input_to_number_with_float(num)
+    if DelgakaChecks.is_number(num) and number:
         print("Square of %s is %s" % (num, square_number(number)))
         print("Cube of %s is %s" % (num, cube_number(number)))
         print("Square root of %s is %s" % (num, square_root_number(number)))
